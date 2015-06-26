@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Bootstrap stylesheet CDN -->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-<!-- My stylesheet -->
-<link href="./styles.css" rel="stylesheet">
-<!-- Font Awesome CDN -->
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <!-- Iconicons -->
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-  <title>Sean Hill's Portfolio!</title>
-</head>
-<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap stylesheet CDN -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <!-- My stylesheet -->
+  <link href="./styles.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Mix Panel -->
+  <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+  mixpanel.init("629fa2a56a138b26dac558c414bf9e17");</script> <!-- end Mixpanel -->  
   <!-- JQuery CDN -->
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <!-- JavaScript CDN -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- My JS Sheet -->
+  <script type="text/javascript" src="script.js"></script>
+  <title>Sean Hill's Portfolio!</title>
+</head>
+<body>
   <!-- Navigation Bar -->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -27,18 +33,20 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Sean Hill</a>
+      <a class="navbar-brand" id="homeButton" href="javascript:void(0);">
+      Sean Hill</a>      
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="https://www.github.com/ckeeyz09">GitHub<span class="sr-only">(current)</span></a></li>
           <li><a href="https://www.linkedin.com/in/ckeeyz09">Linkedin</a></li>
-          <li><a href="#contact-information">Contact Info</a></li>
+          <li><a class="hd_navLink" href="javascript:void(0)" id="portfolioButton">Portfolio</a></li>
+          <li><a class="hd_navLink" href="javascript:void(0)" id="contactButton">Contact</a></li>
         </ul>
         <form class="navbar-form navbar-right" role="search">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
-          </div>
+          </div>  
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
@@ -48,6 +56,30 @@
   </nav>
   <!-- Navigation Bar ends -->
 
+<!-- Home -->
+<section id="homeSection" class="page-home">
+  <div id="backgroundimage">
+
+    <div class="container">
+      <div class="row text-center">
+        <header class="centered">
+          <h1>Sean Hill</h1>
+          <p>Game Developer in training</p>
+        </header>
+
+        <div class="social-icons">
+          <a href="https://github.com/ckeeyz09" class="btn btn-round btn-clear btn-github" id="githubIcon"><i class="fa fa-github-square fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/ckeeyz09" class="btn btn-round btn-clear btn-linkedin" id="linkedinIcon"><i class="fa fa-linkedin-square fa-2x"></i></a>
+        </div> <!-- social icons class end -->
+
+      </div> <!-- row ends -->
+    </div> <!-- container ends -->
+  </div>  <!-- background image ends -->
+</section>  <!-- home ends -->
+
+<!-- Portfolio -->
+<section id="portfolioSection" class="page-portfolio" style="display: none;">
+  <header class="portfolio-section-header">
   <div class="container">
     <div class="row">
       <h2 class="portfolio-title"><span>My Web Development Portfolio</span></h2>
@@ -124,7 +156,11 @@
       </div>
     </div>
   </div>
-  <a name="contact-information"></a>
+</header>
+
+<!-- Contacts -->
+<section id="contactSection" class="page-contact" style="display: none;">
+  <header class="portfolio-section-header"> 
   <div class="container">
     <div class="row">
       <h2 class="portfolio-title">
@@ -136,6 +172,7 @@
       <br>e: seahill@pacbell.net
       <br>m: 925.360.5199
       <br>
+      </p>
       <div class="social-icons">
         <div class="container">
           <div class="row text-center">
@@ -144,6 +181,9 @@
           </div> <!-- social icons class end -->
         </div> <!-- row ends -->
       </div>
-      <br><br><br><br><br><br><br><br><br>
+    </div>
+  </div>  
+</header>
+      
 </body>
 </html>
